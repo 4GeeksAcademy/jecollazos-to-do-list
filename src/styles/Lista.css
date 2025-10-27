@@ -1,0 +1,132 @@
+/* tarjeta Home */
+.todo-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 32rem; 
+  margin: 0 1rem;
+}
+
+/* Efecto de hojas apiladas */
+.todo-stack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 0.5rem; /* 8px */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 0;
+}
+
+.stack-1 {
+  transform: translate(0.25rem, 0.25rem); 
+  opacity: 0.75;
+}
+
+.stack-2 {
+  transform: translate(0.5rem, 0.5rem); 
+  opacity: 0.5;
+}
+
+/* Tarjeta principal (Home.jsx) */
+.todo-card {
+  position: relative; 
+  z-index: 10;
+  background-color: whitesmoke;
+  border-radius: 0.5rem; /* 8px */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden; 
+}
+
+/* Input (Home.jsx) */
+.todo-input {
+  width: 100%;
+  box-sizing: border-box; 
+  padding: 1rem; 
+  font-size: 1.25rem;
+  border: none;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.todo-input:focus {
+  outline: none; 
+}
+
+.todo-input::placeholder {
+  color: #d0afc3; 
+  font-style: italic;
+}
+
+/* Lista  */
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mensaje de "No hay tareas" */
+.todo-list-empty {
+  padding: 1rem;
+  text-align: center;
+  color: #6b7281; 
+  font-style: italic;
+}
+
+/* Ítem individual  */
+.todo-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; 
+  border-bottom: 1px solid #e5e7eb; 
+  transition: background-color 0.2s;
+}
+.todo-item:last-child {
+  border-bottom: none;
+}
+.todo-item:hover {
+  background-color: #f9fafb; 
+}
+
+/* Texto de la tarea (TodoItem.jsx) */
+.todo-item-text {
+  font-size: 1.125rem; 
+  color: darkslategray; 
+  word-break: break-all; 
+}
+
+
+/* Botón de eliminar (TodoItem.jsx) */
+.todo-item-delete {
+
+  opacity: 0; 
+  
+  background: none;
+  border: none;
+  font-size: 1.75rem; 
+  color: rgb(224, 173, 224); 
+  cursor: pointer;
+  transition: opacity 0.2s, color 0.2s;
+  line-height: 1;
+  padding: 0 0.5rem;
+}
+
+/* 2. Lo mostramos cuando se hace hover sobre el PADRE (.todo-item) */
+.todo-item:hover .todo-item-delete {
+  opacity: 1;
+}
+
+.todo-item-delete:hover {
+  color: rgb(224, 173, 224); 
+
+
+/* Pie de página (Home.jsx) */
+.todo-footer {
+  padding: 1rem;
+  font-size: 0.875rem; 
+  color: #6b7281;
+  border-top: 1px solid #e5e7eb;
+}
+}
